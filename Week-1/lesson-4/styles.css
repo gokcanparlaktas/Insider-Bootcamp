@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  background-color: #f0f4ff;
+  min-height: 100vh;
+}
+
+.sidebar {
+  position: fixed;
+  background-color: #171a2c;
+}
+
+.sidebar .sidebar-header {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-header img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.sidebar-header h2 {
+  color: #fff;
+  font-size: 20px;
+}

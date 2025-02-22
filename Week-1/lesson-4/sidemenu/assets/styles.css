@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  background-color: #f0f4ff;
+  min-height: 100vh;
+}
+
+.sidebar {
+  position: fixed;
+  background-color: #171a2c;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 85px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: all 0.4s ease;
+}
+
+.sidebar:hover {
+  width: 250px;
+}
+
+.sidebar .sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-header img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.sidebar-header h2 {
+  font-size: 20px;
+}
+
+h4 .menu-title,
+ul li a,
+.sidebar-header h2 {
+  color: #fff;
+  text-wrap: nowrap;
+  display: none;
+  transition: all 0.2s ease;
+}
+
+.sidebar:hover .menu-title,
+.sidebar:hover ul li a,
+.sidebar:hover .sidebar-header h2 {
+  display: flex;
+}
+
+.sidebar:hover ul li a span {
+  color: #fff;
+}
+
+h4 .menu-title {
+  margin-bottom: 20px;
+}
+
+h4 .line {
+  display: flex;
+  border-bottom: 2px solid #4f52ba;
+  max-width: 65px;
+}
+
+.sidebar:hover h4 .line {
+  display: none;
+}
+
+ul {
+  list-style: none;
+  &:hover {
+    width: 200px;
+  }
+}
+
+li:hover {
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+ul li {
+  padding: 15px 10px;
+  transition: all 0.2s ease;
+}
+
+ul li a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  gap: 10px;
+}
+
+ul li a span {
+  color: transparent;
+}
+li:hover a,
+li:hover a span {
+  color: #000 !important;
+}

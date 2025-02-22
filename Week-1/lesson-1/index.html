@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Login Page</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Login</a></li>
+          <li><a href="#">Register</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section>
+      <div class="login-container">
+        <h2>Kayıt Ol</h2>
+
+        <form action="#" method="POST">
+          <label for="email">Adınız*</label>
+          <input type="text" id="name" name="name" required />
+          <label for="email">Soyadınız</label>
+          <input type="text" id="surname" name="surname" required />
+          <label for="email">E-Mail Adresiniz*</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="örn@email.com"
+            required
+          />
+          <label for="telephone">Telefon Numaranız</label>
+          <input
+            type="tel"
+            name="telephone"
+            id="telephone"
+            placeholder="5XX XXX XX XX"
+            pattern="[0-9]{10}"
+          />
+          <label for="birthday">Doğum Tarihi*</label>
+          <input type="date" id="birthday" name="birthday" required />
+          <label for="password">Şifreniz*</label>
+          <input type="password" id="password" name="password" required />
+          <label for="password-valid">Şifreniz (Tekrar)*</label>
+          <input
+            type="password"
+            id="password-valid"
+            name="password-valid"
+            required
+          />
+          <button type="submit">Kayıt Ol</button>
+        </form>
+        <p>Hesabınız var mı? <a href="/login">Giriş Yap</a></p>
+      </div>
+    </section>
+  </body>
+</html>

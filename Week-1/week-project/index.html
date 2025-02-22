@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favori Dizim</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="navbar-header">
+          <!-- Mobilde hamburger butonu (masaüstünde gizli) -->
+          <button class="hamburger-menu">
+            <i class="fas fa-bars"></i>
+          </button>
+
+          <div class="logo">
+            <img src="assets/images/logo.png" alt="Logo" />
+            <h2>InsMDB</h2>
+          </div>
+
+          <ul class="menu-list">
+            <h4>
+              <span class="menu-title">Main Menu</span>
+              <div class="line"></div>
+            </h4>
+            <li>
+              <a href="#characters">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Karakterler</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-eye"></i>
+                <span>Overview</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-chart-line"></i>
+                <span>Analytic</span>
+              </a>
+            </li>
+          </ul>
+          <div class="profile">
+            <img src="assets/images/user.png" alt="Profil" />
+            <h3>Watcher Uatu</h3>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <aside class="sidebar">
+          <div class="sidebar-top">
+            <div class="sidebar-header">
+              <div class="logo">
+                <img src="assets/images/logo.png" alt="Logo" />
+                <h2>InsMDB</h2>
+              </div>
+            </div>
+            <ul class="menu-list">
+              <h4>
+                <span class="menu-title">Main Menu</span>
+                <div class="line"></div>
+              </h4>
+              <li>
+                <a href="#characters">
+                  <i class="fas fa-tachometer-alt"></i>
+                  <span>Karakterler</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fas fa-eye"></i>
+                  <span>Overview</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fas fa-chart-line"></i>
+                  <span>Analytic</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="profile">
+            <img src="assets/images/user.png" alt="Profil" />
+            <h3>Watcher Uatu</h3>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <!-- Ana Sayfa Bölümü -->
+        <section id="home" class="home">
+          <div class="home-container">
+            <img
+              src="assets/images/banner.jpg"
+              alt="Dizi Afişi"
+              class="poster"
+            />
+            <div class="home-text-container">
+              <h1>
+                <a href="https://www.imdb.com/" target="_blank">Dizi Adı</a>
+              </h1>
+              <p>
+                Dizinin konusu hakkında kısa ve etkileyici bir açıklama buraya
+                gelecek.
+              </p>
+              <button id="fav-btn" class="fav-btn">Favorilere Ekle</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Karakterler Bölümü -->
+        <section id="characters" class="characters">
+          <h2>Karakterler</h2>
+          <div class="character-container">
+            <article class="character">
+              <img src="assets/images/character-1.jpg" alt="Karakter 1" />
+              <h3>Tom Hiddleston</h3>
+              <p>
+                Kısa açıklama: Karakterin öne çıkan özellikleri ve rolü hakkında
+                bilgi.
+              </p>
+            </article>
+            <article class="character">
+              <img src="images/char2.jpg" alt="Karakter 2" />
+              <h3>Karakter 2</h3>
+              <p>
+                Kısa açıklama: Karakterin kişiliği ve dizi içindeki yeri
+                hakkında bilgi.
+              </p>
+            </article>
+            <article class="character">
+              <img src="images/char3.jpg" alt="Karakter 3" />
+              <h3>Karakter 3</h3>
+              <p>
+                Kısa açıklama: Karakterin öne çıkan özellikleri ve hikayedeki
+                rolü hakkında bilgi.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- Favori Sahne Bölümü -->
+        <section id="favorite" class="favorite-scene">
+          <h2>Favori Sahnem</h2>
+          <p>
+            Bu bölümde favori sahnenizi anlatan kısa bir açıklama yer alıyor.
+            İsterseniz aşağıdaki YouTube videosunu da ekleyebilirsiniz.
+          </p>
+          <div class="video-container">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/dug56u8NN7g"
+              title="YouTube video player"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </section>
+
+        <!-- Bölümler -->
+        <section id="episodes" class="episodes">
+          <h2>Bölümler</h2>
+          <div class="episode-grid">
+            <article class="episode">
+              <h3>Bölüm 1</h3>
+              <p>
+                Kısa açıklama: Bölümün ana olayları ve dikkat çeken sahneleri.
+              </p>
+            </article>
+            <article class="episode">
+              <h3>Bölüm 2</h3>
+              <p>Kısa açıklama: Bölümün konusu ve önemli gelişmeler.</p>
+            </article>
+            <article class="episode">
+              <h3>Bölüm 3</h3>
+              <p>
+                Kısa açıklama: Hikayenin ilerlemesi ve karakter etkileşimleri.
+              </p>
+            </article>
+            <article class="episode">
+              <h3>Bölüm 4</h3>
+              <p>Kısa açıklama: Çarpıcı olaylar ve sürpriz gelişmeler.</p>
+            </article>
+            <article class="episode">
+              <h3>Bölüm 5</h3>
+              <p>
+                Kısa açıklama: Bölümün finali ve gelecek bölümler için ipuçları.
+              </p>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>
+          Tasarım:
+          <a href="https://github.com/kullaniciadi" target="_blank">Adınız</a>
+        </p>
+      </div>
+    </footer>
+    <script defer src="js/script.js"></script>
+  </body>
+</html>
