@@ -1,8 +1,5 @@
-/* Genel ayarlar */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -10,19 +7,43 @@ body {
   background: linear-gradient(to right, rgb(32, 0, 44), rgb(203, 180, 212));
   color: white;
   line-height: 1.6;
+  min-height: 100vh;
 }
 
-/* Container ayarları */
 .container {
   max-width: 80vw;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 0 0 10vw;
 }
-
-/* Header & Navbar */
 
 .navbar {
   display: none;
+}
+
+.navbar-header .logo a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-header .logo h2 {
+  color: #ffa948;
+  text-decoration: none;
+}
+
+.hamburger,
+.hamburger-menu {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .logo a {
@@ -30,6 +51,19 @@ body {
   font-size: 24px;
   font-weight: bold;
   color: #333;
+}
+
+.logo h2 {
+  font-size: 20px;
+  color: #fff;
+  display: none;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  margin: 0;
+}
+
+.logo img {
+  width: 40px;
 }
 
 .nav-links {
@@ -48,171 +82,36 @@ body {
   color: #fda085;
 }
 
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .profile img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
 
-.hamburger {
+.profile h3 {
+  font-size: 16px;
   display: none;
-  font-size: 28px;
-  background: none;
-  border: none;
-  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-/* Ana Sayfa */
-.home {
-  margin: 40px 0;
-}
-.home-container {
+.profile-link {
   display: flex;
-  gap: 30px;
-  padding: 40px 50px;
-  background-color: #0000008f;
-  border-radius: 30px;
-}
-.home-text-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.home-text-container p {
-  text-align: justify;
-}
-
-.home-text-container h1 a {
-  font-size: 6vh;
+  align-items: center;
+  gap: 10px;
   text-decoration: none;
   color: white;
 }
 
-.poster {
-  width: 60%;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
+.profile-link:hover {
+  color: #f19733;
 }
 
-.poster:hover {
-  transform: scale(1.05);
-}
-
-.fav-btn {
-  width: fit-content;
-  padding: 10px 20px;
-  border: none;
-  background-color: #fda085;
-  color: #fff;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.fav-btn.clicked {
-  background-color: #ff416c;
-}
-
-/* Karakterler Bölümü */
-.characters {
-  margin-bottom: 40px;
-}
-.characters h2 {
-  margin-bottom: 40px;
-}
-
-.character-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 20px;
-}
-
-.character {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 30px;
-  border-radius: 10px;
-  width: 30%;
-  text-align: center;
-  transition: transform 0.3s;
-}
-
-.character:hover {
-  transform: translateY(-5px);
-}
-
-.character img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-/* Favori Sahne Bölümü */
-.favorite-scene {
-  margin-bottom: 40px;
-  text-align: center;
-}
-
-.video-container {
-  margin-top: 20px;
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 oranı */
-  height: 0;
-}
-
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 80vw;
-  height: 100%;
-}
-
-/* Bölümler (Episodlar) Bölümü */
-.episodes {
-  margin-bottom: 40px;
-}
-
-.episode-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-}
-
-.episode {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 15px;
-  border-radius: 10px;
-  transition: box-shadow 0.3s;
-}
-
-.episode:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px 0;
-  background: rgba(255, 255, 255, 0.9);
-}
-
-/* Responsive Ayarlar */
-@media (max-width: 768px) {
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-body {
-  background-color: #f0f4ff;
-  min-height: 100vh;
-}
-/* Dikey Sidebar (Masaüstü) */
 .sidebar {
   position: fixed;
   background-color: rgba(32, 0, 44, 0.699);
@@ -229,14 +128,24 @@ body {
 }
 
 .sidebar:hover {
-  width: 220px;
+  width: 13vw;
+  min-width: 170px;
 }
 
-/* Sidebar Header: Hamburger, Logo ve Profil */
 .sidebar .sidebar-header {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.sidebar-header .logo a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-header .logo h2 {
+  color: #f19733;
 }
 
 .sidebar-top {
@@ -244,51 +153,10 @@ body {
   gap: 20px;
   flex-direction: column;
 }
-/* Hamburger buton masaüstünde gizli */
-.hamburger-menu {
-  display: none;
-}
 
-/* Logo */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo img {
-  width: 40px;
-}
-
-.logo h2,
-.profile h3 {
-  font-size: 20px;
-  color: #fff;
-  /* Masaüstünde sidebar kapalıyken logo yazısı gizli kalsın */
-  display: none;
-  transition: all 0.2s ease;
-}
-
-/* Profil: Her zaman görünür */
-.profile {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.profile img {
-  width: 40px;
-  border-radius: 50%;
-}
-
-.profile h3 {
-  font-size: 16px;
-  text-wrap: nowrap;
-}
-/* Menü liste elemanları */
 h4 .menu-title,
 ul li a {
-  color: #fff;
+  color: #ffa948;
   white-space: nowrap;
   display: none;
   transition: all 0.2s ease;
@@ -302,6 +170,7 @@ ul li a {
 }
 
 .sidebar:hover ul li a span {
+  display: block;
   color: #fff;
 }
 
@@ -311,8 +180,7 @@ h4 .menu-title {
 
 h4 .line {
   display: flex;
-  border-bottom: 2px solid #4f52ba;
-  max-width: 65px;
+  border-bottom: 2px solid #ffa948;
 }
 
 .sidebar:hover h4 .line {
@@ -344,25 +212,238 @@ ul li a {
 }
 
 ul li a span {
-  color: transparent;
+  display: none;
+  color: white;
 }
 
 li:hover a,
 li:hover a span {
-  color: #000 !important;
+  color: rgb(255, 169, 72) !important;
 }
 
-/* Mobil Versiyon: Yatay Üst Navbar */
+.home {
+  margin: 40px 0;
+}
+
+.home-container {
+  display: flex;
+  gap: 30px;
+  padding: 40px 50px;
+  background-color: #0000008f;
+  border-radius: 30px;
+}
+
+.home-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.home-text-container h1 a {
+  font-size: 5vh;
+  text-decoration: none;
+  color: white;
+}
+
+.home-text-container p {
+  font-size: 2vh;
+  text-align: justify;
+}
+.home-text-container .imdb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.home-text-container .imdb i {
+  font-size: 5vh;
+}
+
+.poster {
+  width: 60%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.poster:hover {
+  transform: scale(1.05);
+}
+
+.fav-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  padding: 10px 20px;
+  border: none;
+  background-color: #f19733;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.fav-btn.clicked {
+  background-color: #ff416c;
+}
+
+.characters {
+  margin-bottom: 40px;
+}
+
+h2 {
+  margin-bottom: 40px;
+  text-decoration: underline;
+  text-underline-offset: 20px;
+  text-decoration-color: orange;
+}
+
+.character-container,
+.character-cards-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2vw;
+  width: 100%;
+}
+
+.character {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 30px;
+  border-radius: 10px;
+  width: 50%;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.character:hover {
+  transform: translateY(-5px);
+}
+
+.character img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.overview {
+  margin-bottom: 40px;
+}
+
+.overview-container {
+  margin-top: 20px;
+  gap: 30px;
+  display: flex;
+}
+
+.overview-container iframe {
+  width: 50%;
+  aspect-ratio: 16/9;
+  border-radius: 30px;
+}
+
+.overview-container .overview-text {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.overview-container .overview-text p:last-child {
+  font-weight: bold;
+  text-align: end;
+}
+
+.episodes {
+  margin-bottom: 40px;
+}
+
+.episode-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.episode {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 10px;
+  padding: 10px 30px;
+  border-radius: 10px;
+  transition: box-shadow 0.3s;
+  background-size: cover;
+  background-position: center;
+}
+
+.episode:first-child {
+  background-image: url("../images/episode-1.jpg");
+}
+
+.episode:nth-child(2) {
+  background-image: url("../images/episode-2.jpg");
+}
+
+.episode:nth-child(3) {
+  background-image: url("../images/episode-3.jpg");
+}
+
+.episode:nth-child(4) {
+  background-image: url("../images/episode-4.jpg");
+}
+
+.episode:last-child {
+  background-image: url("../images/episode-5.jpg");
+}
+
+.episode:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.footer-social a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f19733;
+  width: 40px;
+  background-color: white;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  color: white;
+  background-color: #f19733;
+}
+
 @media (max-width: 768px) {
   .container {
     max-width: 90vw;
     padding: 0;
+    margin: auto;
   }
 
   .sidebar {
     display: none;
   }
+
   .navbar {
+    position: sticky;
+    top: 0;
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -370,10 +451,14 @@ li:hover a span {
     padding: 0 20px;
     align-items: center;
     justify-content: space-between;
+    background-color: rgb(32 0 44 / 90%);
+    z-index: 50;
   }
+
   .navbar:hover {
     width: 100%;
   }
+
   .navbar .navbar-header {
     display: flex;
     flex-direction: row;
@@ -381,7 +466,7 @@ li:hover a span {
     width: 100%;
     justify-content: space-between;
   }
-  /* Hamburger buton: Sol tarafta, mobilde görünür */
+
   .hamburger-menu {
     display: block;
     background: none;
@@ -390,76 +475,116 @@ li:hover a span {
     font-size: 24px;
     cursor: pointer;
   }
-  /* Logo: Ortada */
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+
+  .hamburger-menu i {
+    color: #ffa948;
   }
+
   .logo h2 {
     display: block;
     font-size: 20px;
-    color: #fff;
+    margin: 0;
+    text-decoration: none;
   }
-  /* Profil: Sağ tarafta, her zaman görünür */
+
   .profile {
     display: block;
   }
+
   .profile img {
     width: 40px;
     border-radius: 50%;
   }
-  /* Masaüstü hover efektlerinin mobilde uygulanmaması */
+
   .sidebar:hover .menu-title,
   .sidebar:hover ul li a,
   .sidebar:hover .logo h2 {
     display: none;
   }
-  /* Menü listesi (mobilde gizli, hamburger tıklaması ile açılır) */
+
   .menu-list {
     display: none;
     position: absolute;
     top: 60px;
     left: 0;
     width: 100%;
-    background-color: #171a2c;
-    padding: 10px 0;
+    background-color: #222222eb;
+    padding: 10px 20px;
     flex-direction: column;
   }
+
   .menu-list.active {
     display: flex;
   }
+
+  .menu-list li a span {
+    display: block;
+    color: #ffa948;
+  }
+
+  .menu-list li a i {
+    color: #ffa948;
+  }
+
+  .main {
+    z-index: 1;
+  }
+
   .home {
     margin-top: 80px;
   }
+
   .home-container {
     flex-direction: column;
     gap: 30px;
   }
+
   .home-container img {
     width: 100%;
   }
+
   .character {
-    width: 80vw;
+    width: 47%;
+    padding: 15px;
   }
+
   .nav-links {
     flex-direction: column;
     display: none;
   }
+
   .nav-links.active {
     display: flex;
   }
+
   .hamburger {
     display: block;
   }
+
   .character-container {
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
+    gap: 3vw;
   }
+
   .episode {
-    width: 80vw;
+    width: 100%;
   }
+
   .episodes {
     justify-items: center;
+  }
+
+  .overview-container {
+    flex-wrap: wrap;
+  }
+
+  .overview-container iframe {
+    width: 100%;
+  }
+
+  .overview-container .overview-text {
+    width: 100%;
   }
 }
