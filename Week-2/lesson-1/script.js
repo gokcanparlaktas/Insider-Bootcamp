@@ -4,21 +4,22 @@ let user = {
   job: prompt("Mesleğiniz nedir?"),
 };
 
-document.getElementById("user-info").innerHTML = `
-    <h2>Müşteri Bilgileri 👨🏻‍👩🏻‍👧🏻‍👦🏻</h2>
-    <p><strong>Ad:</strong> ${user.name}</p>
-    <p><strong>Yaş:</strong> ${user.age}</p>
-    <p><strong>Meslek:</strong> ${user.job}</p>`;
+let cart = [];
 
 console.log(
-  `Müşteri Bilgileri: { name: '${user.name}', age: ${user.age}, job: '${user.job}' }`
+  `Kullanıcı Bilgileri: { name: '${user.name}', age: ${user.age}, job: '${user.job}' }`
 );
 
-let cart = [];
+document.getElementById("user-info").innerHTML = `
+    <h2>Müşteri Bilgileri</h2>
+    <p><strong>Ad:</strong> ${user.name}</p>
+    <p><strong>Yaş:</strong> ${user.age}</p>
+    <p><strong>Meslek:</strong> ${user.job}</p>
+`;
 
 while (true) {
   let productName = prompt(
-    "Sepete eklemek istediğiniz ürünü yazın (Çıkmak için ESC veya 'q' tuşuna basın):"
+    "Sepete eklemek istediğiniz ürünü yazın (Bitti mi? 'q' tuşuna basın):"
   );
 
   if (productName === null || productName.toLowerCase() === "q") break;
@@ -29,7 +30,7 @@ while (true) {
     productPrice === null ||
     isNaN(productPrice) ||
     productPrice.trim() === "" ||
-    productPrice < 0
+    productPrice <= 0
   ) {
     alert("Geçersiz fiyat! Lütfen bir sayı girin.");
     continue;
@@ -37,12 +38,13 @@ while (true) {
 
   let price = parseFloat(productPrice);
 
-  cart.push({ product: productName, price: price });
+  cart.push({ product: productName.toLowerCase(), price: price });
   console.log(`${productName} ürünü sepete eklendi. Fiyat: ${price} TL`);
 }
 
-document.getElementById("cart-info").innerHTML = `
-    <h2>Sepetiniz 🛒</h2>
+function updateCartDisplay() {
+  document.getElementById("cart-info").innerHTML = `
+    <h2>Sepetiniz</h2>
     <ul>
         ${cart
           .map((item) => `<li>${item.product} - ${item.price} TL</li>`)
@@ -50,9 +52,59 @@ document.getElementById("cart-info").innerHTML = `
     </ul>
     <p><strong>Toplam Fiyat:</strong> 
     ${cart.reduce((sum, item) => sum + item.price, 0)} TL</p>
-`;
+  `;
+}
 
-console.log(`Sepetiniz: ${JSON.stringify(cart, null, 2)}`);
-console.log(
-  `Toplam Fiyat: ${cart.reduce((sum, item) => sum + item.price, 0)} TL`
-);
+function removeFromCart(productName) {
+  const index = cart.findIndex(
+    (item) => item.product === productName.toLowerCase()
+  );
+
+  if (index === -1) {
+    console.log(`"${productName}" adlı ürün sepetinizde bulunamadı.`);
+    return;
+  }
+
+  let removedItem = cart[index];
+  cart = [...cart.slice(0, index), ...cart.slice(index + 1)];
+
+  console.log(
+    `\n"${removedItem.product}" ürünü sepetten çıkarıldı. Fiyat: ${removedItem.price} TL`
+  );
+}
+
+function removeProductsFromCart() {
+  while (cart.length > 0) {
+    let removeProduct = prompt(
+      "Sepetten çıkarmak istediğiniz ürünün adını girin (Bitti mi? 'q' tuşuna basın):"
+    );
+
+    if (removeProduct === null || removeProduct.toLowerCase() === "q") break;
+
+    removeFromCart(removeProduct);
+  }
+  updateCartDisplay();
+}
+
+while (true) {
+  let choice = prompt(
+    "İşlemi tamamlamak için 'q', ürün çıkarmak için 'x' tuşuna basın:"
+  );
+
+  if (choice === null || choice.toLowerCase() === "q") {
+    updateCartDisplay();
+    console.log("\nGüncellenmiş Sepet:");
+    cart.forEach((item, index) =>
+      console.log(`${index + 1}. ${item.product} - ${item.price} TL`)
+    );
+    console.log(
+      `Toplam Fiyat: ${cart.reduce((sum, item) => sum + item.price, 0)} TL`
+    );
+    console.log("İşlem tamamlandı!");
+    break;
+  }
+
+  if (choice.toLowerCase() === "x") {
+    removeProductsFromCart();
+  }
+}
