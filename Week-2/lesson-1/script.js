@@ -19,7 +19,7 @@ document.getElementById("user-info").innerHTML = `
 
 while (true) {
   let productName = prompt(
-    "Sepete eklemek istediğiniz ürünü yazın (Bitti mi? 'q' tuşuna basın):"
+    "Sepete eklemek istediğiniz ürünü yazın (Sepetiniz tamamlandı ise q tuşuna basınız.):"
   );
 
   if (productName === null || productName.toLowerCase() === "q") break;
@@ -76,7 +76,7 @@ function removeFromCart(productName) {
 function removeProductsFromCart() {
   while (cart.length > 0) {
     let removeProduct = prompt(
-      "Sepetten çıkarmak istediğiniz ürünün adını girin (Bitti mi? 'q' tuşuna basın):"
+      "Sepetten çıkarmak istediğiniz ürünün adını girin (Tamamlandı ise lütfen q tuşuna basınız.):"
     );
 
     if (removeProduct === null || removeProduct.toLowerCase() === "q") break;
@@ -88,12 +88,12 @@ function removeProductsFromCart() {
 
 while (true) {
   let choice = prompt(
-    "İşlemi tamamlamak için 'q', ürün çıkarmak için 'x' tuşuna basın:"
+    "Alışverişi tamamlamak için q tuşuna, tamamlamadan önce ürün çıkarmak için x tuşuna basın:"
   );
 
   if (choice === null || choice.toLowerCase() === "q") {
     updateCartDisplay();
-    console.log("\nGüncellenmiş Sepet:");
+    console.log("\nSepetiniz:");
     cart.forEach((item, index) =>
       console.log(`${index + 1}. ${item.product} - ${item.price} TL`)
     );

@@ -1,0 +1,76 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 20px;
+  background: linear-gradient(120deg, #a1c4fd, #c2e9fb);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  max-width: 60vw;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.timeline {
+  margin-top: 20px;
+  padding: 10px;
+  border-left: 4px solid #007bff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background: rgba(227, 242, 253, 0.8);
+  border-radius: 10px;
+  padding: 15px;
+  gap: 5px;
+}
+.step {
+  padding: 12px 18px;
+  background: linear-gradient(135deg, #007bff, #00d4ff);
+  color: white;
+  font-weight: bold;
+  margin: 6px 0;
+  border-radius: 25px;
+  width: fit-content;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.3s ease-out;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+}
+.step.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+button {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background 0.3s, transform 0.2s;
+}
+button:hover {
+  background: linear-gradient(135deg, #0056b3, #003d80);
+  transform: scale(1.05);
+}
+#totalSteps,
+#calculationTime {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 15px;
+  color: #333;
+  padding: 12px;
+  background: rgba(255, 243, 205, 0.9);
+  border: 1px solid #ffeeba;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
