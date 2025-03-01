@@ -5,7 +5,7 @@ do {
     alert("Lütfen 1.000.000'dan küçük ve geçerli bir pozitif sayı girin.");
   }
 } while (isNaN(num) || num <= 0 || num >= 1000000);
-
+let startTime = performance.now();
 let steps = 0;
 let originalNum = num;
 let results = [];
@@ -18,7 +18,6 @@ while (num !== 1) {
 results.push(1);
 steps++;
 
-let startTime = performance.now();
 let endTime = performance.now();
 let calculationTime = Math.max((endTime - startTime).toFixed(4), 0.0001);
 
