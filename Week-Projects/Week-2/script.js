@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let completedTasks =
       JSON.parse(localStorage.getItem("completedTasks")) || [];
     let showCompletedOnly = false;
+    let isPriorityDescending = true; // Başlangıçta yüksekten düşüğe sıralama
 
     const renderTasks = () => {
       try {
@@ -12,32 +13,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const filteredTasks = showCompletedOnly ? [...completedTasks] : tasks;
 
+        const priorityOrder = { high: 1, medium: 2, low: 3 };
+
         filteredTasks.sort((a, b) => {
-          const priorityOrder = { high: 1, medium: 2, low: 3 };
-          return priorityOrder[a.priority] - priorityOrder[b.priority];
+          const comparison =
+            priorityOrder[a.priority] - priorityOrder[b.priority];
+          return isPriorityDescending ? -comparison : comparison; // Toggle sıralama
         });
 
         const tasksHTML = filteredTasks
           .map(({ title, description, priority, completed }, index) => {
             return `
-                <div class="task-item ${priority.toLowerCase()} ${
+              <div class="task-item ${priority.toLowerCase()} ${
               completed ? "completed" : ""
             }">
-                  <div>
-                    <h3>${title}</h3>
-                    <strong>Detaylar:</strong>
-                    <p>${description}</p>
-                    <strong>Öncelik:</strong>
-                    <p>${priority}</p>
-                  </div>
-                  <div>
-                    <button class="complete-btn" data-index="${index}">${
-              completed ? "Geri Al" : "Tamamla"
-            }</button>
-                    <button class="delete-btn" data-index="${index}">Sil</button>
-                  </div>
+                <div>
+                  <h3>${title}</h3>
+                  <strong>Detaylar:</strong>
+                  <p>${description}</p>
+                  <strong>Öncelik:</strong>
+                  <p>${priority}</p>
                 </div>
-              `;
+                <div>
+                  ${
+                    completed
+                      ? ""
+                      : `<button class="complete-btn" data-index="${index}">${
+                          completed ? "Geri Al" : "Tamamla"
+                        }</button>`
+                  }
+                  <button class="delete-btn" data-index="${index}">Sil</button>
+                </div>
+              </div>
+            `;
           })
           .join("");
 
@@ -124,6 +132,15 @@ document.addEventListener("DOMContentLoaded", () => {
       } catch (error) {
         console.error("Hata oluştu: ", error);
       }
+    });
+
+    document.getElementById("priorityToggle").addEventListener("click", () => {
+      isPriorityDescending = !isPriorityDescending;
+      document.getElementById("priorityToggle").textContent =
+        isPriorityDescending
+          ? "Öncelik Sırası: Artan"
+          : "Öncelik Sırası: Azalan";
+      renderTasks();
     });
 
     renderTasks();
