@@ -19,7 +19,7 @@ body {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   width: 200px;
   text-align: center;
-  transition: box-shadow 0.3s ease, background 5s ease-in-out;
+  transition: box-shadow 1s ease, background 1s ease-in-out;
 }
 .time-up {
   background: gray;
