@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Görev Listesi</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>Görev Listesi</h1>
+      <div class="container">
+        <form id="taskForm">
+          <input
+            type="text"
+            id="taskTitle"
+            placeholder="Görev başlığı"
+            required
+          />
+          <button type="submit">Ekle</button>
+        </form>
+        <ul id="taskList"></ul>
+        <button id="filterCompleted">Sadece Tamamlananları Göster</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
