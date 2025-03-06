@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>İş Başvuru Formu</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <button class="apply-btn" id="apply-btn">Başvuru Yap</button>
+    <div id="application-form">
+      <h2>İş Başvuru Formu</h2>
+      <form id="jobForm">
+        <label>Ad<input type="text" name="firstName" required /></label>
+        <label>Soyad<input type="text" name="lastName" required /></label>
+        <label>E-posta<input type="email" name="email" required /></label>
+        <label>Telefon<input type="text" name="phone" required /></label>
+        <label>Pozisyon<input type="text" name="position" required /></label>
+        <label
+          >En Yakın Başlama Tarihi<input
+            type="text"
+            id="datepicker"
+            name="date"
+        /></label>
+        <button class="button" type="submit">Gönder</button>
+      </form>
+    </div>
+    <div id="popup-message" class="popup-message">
+      Başvurunuz başarıyla gönderildi!
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
