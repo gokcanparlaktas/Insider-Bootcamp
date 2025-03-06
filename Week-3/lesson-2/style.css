@@ -60,9 +60,12 @@ body {
 }
 
 .card {
+<<<<<<< HEAD
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+=======
+>>>>>>> 2817fc97cd7dd4300f50beff918057bc5556f4d0
   width: 30%;
   border: 1px solid #ffffff;
   border-radius: 10px;
@@ -183,6 +186,14 @@ body {
   transition: background-color 0.3s ease, transform 0.2s;
 }
 
+<<<<<<< HEAD
+=======
+#toggleButton:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+>>>>>>> 2817fc97cd7dd4300f50beff918057bc5556f4d0
 @media screen and (max-width: 991px) {
   .container {
     width: 100%;
