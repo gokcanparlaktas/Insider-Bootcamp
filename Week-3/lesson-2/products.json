@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Laptop",
+    "price": "1500",
+    "link": "https://example.com/laptop",
+    "description": "Intel i7 işlemci, 16GB RAM, 512GB SSD",
+    "image": "https://img.freepik.com/free-vector/laptop-realistic_78370-511.jpg?t=st=1741263547~exp=1741267147~hmac=976609045549723191bfe2803bb8c13ac97be3dc8f2c33a93e0983794b516d2b&w=740"
+  },
+  {
+    "name": "Akıllı Telefon",
+    "price": "800",
+    "link": "https://example.com/telefon",
+    "description": "128GB Depolama, 6.5 inç AMOLED Ekran",
+    "image": "https://img.freepik.com/free-psd/iphone-15-set-mockup_1332-60618.jpg?t=st=1741263852~exp=1741267452~hmac=9cd4d683181f2d4f08a153e027e7a36566abd7216729f241263fcdb31dc77800&w=1060"
+  },
+  {
+    "name": "Kablosuz Kulaklık",
+    "price": "200",
+    "link": "https://example.com/kulaklik",
+    "description": "Bluetooth 5.0, Gürültü Engelleme",
+    "image": "https://img.freepik.com/free-psd/technological-headphones-isolated_23-2151209619.jpg?t=st=1741264000~exp=1741267600~hmac=20e93a76fce9cf3bbc63bafefd0edfab66b45993c2520c437a057da2f7bb82a4&w=1060"
+  },
+  {
+    "name": "Akıllı Saat",
+    "price": "250",
+    "link": "https://example.com/akilli-saat",
+    "description": "Kalp Atış Hızı, GPS, 7 Gün Pil Ömrü",
+    "image": "https://img.freepik.com/free-vector/smartwatch-with-blank-screen-black-wrist-band_107791-29216.jpg?t=st=1741264321~exp=1741267921~hmac=e434c45b3674363f047b3da7d46216c7e321d882931ee5590c26d8ccb4dfe296&w=1380"
+  },
+  {
+    "name": "Tablet",
+    "price": "400",
+    "link": "https://example.com/tablet",
+    "description": "10.5 inç Retina Ekran, 64GB Depolama",
+    "image": "https://img.freepik.com/free-photo/top-view-device-concept-with-copy-space_23-2148812442.jpg?t=st=1741264851~exp=1741268451~hmac=56e557cd5c3908d9dcf691e651abdc233407c9d82f750393076a2ec07f00f466&w=1380"
+  },
+  {
+    "name": "Mekanik Klavye",
+    "price": "120",
+    "link": "https://example.com/klavye",
+    "description": "RGB Aydınlatma, Mavi Switch",
+    "image": "https://img.freepik.com/free-photo/top-view-arrangement-with-keyboard_23-2148604846.jpg?t=st=1741264956~exp=1741268556~hmac=0f984bcab40405d5e5305d75def51faf36331098dda0bcff627b4dd9a536b13b&w=1380"
+  },
+  {
+    "name": "Akıllı Saat",
+    "price": "250",
+    "link": "https://example.com/akilli-saat",
+    "description": "Kalp Atış Hızı, GPS, 7 Gün Pil Ömrü",
+    "image": "https://img.freepik.com/free-vector/smartwatch-with-blank-screen-black-wrist-band_107791-29216.jpg?t=st=1741264321~exp=1741267921~hmac=e434c45b3674363f047b3da7d46216c7e321d882931ee5590c26d8ccb4dfe296&w=1380"
+  },
+  {
+    "name": "Tablet",
+    "price": "400",
+    "link": "https://example.com/tablet",
+    "description": "10.5 inç Retina Ekran, 64GB Depolama",
+    "image": "https://img.freepik.com/free-photo/top-view-device-concept-with-copy-space_23-2148812442.jpg?t=st=1741264851~exp=1741268451~hmac=56e557cd5c3908d9dcf691e651abdc233407c9d82f750393076a2ec07f00f466&w=1380"
+  },
+  {
+    "name": "Mekanik Klavye",
+    "price": "120",
+    "link": "https://example.com/klavye",
+    "description": "RGB Aydınlatma, Mavi Switch",
+    "image": "https://img.freepik.com/free-photo/top-view-arrangement-with-keyboard_23-2148604846.jpg?t=st=1741264956~exp=1741268556~hmac=0f984bcab40405d5e5305d75def51faf36331098dda0bcff627b4dd9a536b13b&w=1380"
+  }
+]
