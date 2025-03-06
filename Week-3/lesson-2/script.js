@@ -6,7 +6,6 @@ $(document).ready(function () {
     url: "products.json",
     method: "GET",
     dataType: "json",
-<<<<<<< HEAD
     success: function (response) {
       allProducts = response;
       showLimitedProducts();
@@ -18,18 +17,6 @@ $(document).ready(function () {
   });
 
   $("#toggleButton").on("click", function () {
-=======
-    success: function (data) {
-      allProducts = data;
-      showLimitedProducts();
-    },
-    error: function () {
-      alert("Ürünler yüklenemedi!");
-    },
-  });
-
-  $("#toggleButton").click(function () {
->>>>>>> 2817fc97cd7dd4300f50beff918057bc5556f4d0
     isAllVisible = !isAllVisible;
     if (isAllVisible) {
       showAllProducts();
@@ -40,7 +27,6 @@ $(document).ready(function () {
     }
   });
 });
-<<<<<<< HEAD
 $("#toggleButton")
   .on("mouseenter", function () {
     $(this).css({ "background-color": "#28a745", transform: "scale(1.05)" });
@@ -48,8 +34,6 @@ $("#toggleButton")
   .on("mouseleave", function () {
     $(this).css({ "background-color": "#007bff", transform: "scale(1)" });
   });
-=======
->>>>>>> 2817fc97cd7dd4300f50beff918057bc5556f4d0
 
 function showLimitedProducts() {
   var productContainer = $("#productContainer");
