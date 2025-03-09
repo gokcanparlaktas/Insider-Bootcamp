@@ -1,0 +1,119 @@
+[
+  {
+    "name": "Gaming Laptop",
+    "price": "1800",
+    "link": "https://example.com/gaming-laptop",
+    "description": "Intel i9 işlemci, 32GB RAM, 1TB SSD, RTX 3060",
+    "image": "https://img.freepik.com/free-vector/3d-green-neon-laptop-screen-dark-digital-mockup_107791-31813.jpg?t=st=1741518242~exp=1741521842~hmac=277a9430099eedb4652885493ea6242926b47bdd40e044a915b549555de86413&w=1480",
+    "details": {
+      "warranty": "2 Yıl",
+      "color": "Siyah",
+      "weight": "2.5 kg",
+      "screen": "15.6 inç 144Hz"
+    }
+  },
+  {
+    "name": "Ultrabook",
+    "price": "1200",
+    "link": "https://example.com/ultrabook",
+    "description": "Intel i5 işlemci, 16GB RAM, 256GB SSD",
+    "image": "https://img.freepik.com/free-photo/laptop-device-with-minimalist-monochrome-background_23-2150763336.jpg?t=st=1741518286~exp=1741521886~hmac=37462e2283462831da4237113c4a51a3501966b5b811c9de15ef2bab49952865&w=1060",
+    "details": {
+      "warranty": "2 Yıl",
+      "color": "Gümüş",
+      "weight": "1.2 kg",
+      "screen": "13.3 inç Full HD"
+    }
+  },
+  {
+    "name": "Kablosuz Kulaklık Pro",
+    "price": "300",
+    "link": "https://example.com/kulaklik-pro",
+    "description": "Bluetooth 5.2, ANC, 30 Saat Pil",
+    "image": "https://img.freepik.com/free-psd/technological-headphones-isolated_23-2151209619.jpg?t=st=1741518315~exp=1741521915~hmac=2ff7a58328bf0c9536d97361c1b7b440c0e2c83df490f17ddf5047dd39dc6802&w=1060",
+    "details": {
+      "warranty": "1 Yıl",
+      "color": "Beyaz",
+      "weight": "250g",
+      "charging": "USB-C"
+    }
+  },
+  {
+    "name": "Akıllı Saat Pro",
+    "price": "350",
+    "link": "https://example.com/akilli-saat-pro",
+    "description": "EKG, GPS, 10 Gün Pil",
+    "image": "https://img.freepik.com/free-vector/3d-isolated-electronic-smart-watch-with-sport-band_107791-29294.jpg?t=st=1741518346~exp=1741521946~hmac=6c4d2a276502f2a5276b8a35222f449221bbf034e91fef7c9e9226781f923063&w=1380",
+    "details": {
+      "warranty": "2 Yıl",
+      "color": "Siyah",
+      "weight": "50g",
+      "waterproof": "IP68"
+    }
+  },
+  {
+    "name": "Tablet Pro",
+    "price": "600",
+    "link": "https://example.com/tablet-pro",
+    "description": "12.9 inç, 128GB Depolama, Stylus Desteği",
+    "image": "https://img.freepik.com/free-vector/digital-device-mockup_53876-89920.jpg?t=st=1741518366~exp=1741521966~hmac=b90188811cc68d45e38894dab6beb67609a18001c0eed8aa0c055129f57a00e0&w=740",
+    "details": {
+      "warranty": "2 Yıl",
+      "color": "Gri",
+      "weight": "600g",
+      "screen": "Retina Display"
+    }
+  },
+  {
+    "name": "Mekanik Klavye RGB",
+    "price": "150",
+    "link": "https://example.com/klavye-rgb",
+    "description": "Mavi Switch, RGB Aydınlatma",
+    "image": "https://img.freepik.com/free-photo/top-view-white-keyboard-with-lights_23-2149680276.jpg?t=st=1741518400~exp=1741522000~hmac=c9cb30b770c627d3afc33d4dbfff5cf63e1d8344364b1937370e1294b50ecfe0&w=1060",
+    "details": {
+      "warranty": "1 Yıl",
+      "color": "Siyah",
+      "keys": "104",
+      "cable": "USB"
+    }
+  },
+  {
+    "name": "Gaming Mouse",
+    "price": "80",
+    "link": "https://example.com/gaming-mouse",
+    "description": "DPI Ayarlı, RGB, 8 Tuş",
+    "image": "https://img.freepik.com/free-photo/shiny-mouse-dark-desk-office-generated-by-ai_188544-22225.jpg?t=st=1741518499~exp=1741522099~hmac=1f2a97995e92ea924ef740fd4de0bbdaad351e36583b20b5e06a482e8ef4f154&w=1380",
+    "details": {
+      "warranty": "1 Yıl",
+      "color": "Kırmızı-Siyah",
+      "weight": "120g",
+      "cable": "USB"
+    }
+  },
+  {
+    "name": "Akıllı Ev Asistanı",
+    "price": "250",
+    "link": "https://example.com/ev-asistani",
+    "description": "Sesli Komut, IoT Desteği",
+    "image": "https://img.freepik.com/free-photo/managing-smart-speakers-concept_23-2150170086.jpg?t=st=1741518549~exp=1741522149~hmac=c34ca6cc541c98d0595f89818eaa37832e259fb913947a95f0c2e3a5c7e27241&w=1060",
+    "details": {
+      "warranty": "2 Yıl",
+      "color": "Beyaz",
+      "weight": "1 kg",
+      "wifi": "5GHz"
+    }
+  },
+  {
+    "name": "4K Aksiyon Kamerası",
+    "price": "400",
+    "link": "https://example.com/aksiyon-kamera",
+    "description": "60FPS, Su Geçirmez, Wi-Fi",
+    "image": "https://img.freepik.com/free-photo/playful-cctv-webcam-ready-record-colorful-blue-pastel-studio-background-with-copy-space-ai-generative_91128-2195.jpg?t=st=1741518685~exp=1741522285~hmac=0a48bbc8ddee7ed8faa210828eed1491a23c1b733cea9a023137ce95aa12c551&w=1380",
+    "details": {
+      "warranty": "2 Yıl",
+      "color": "Mavi",
+      "weight": "150g",
+      "battery": "1500mAh"
+    }
+  }
+]
