@@ -2,13 +2,13 @@ document.addEventListener("DOMContentLoaded", () => {
   init();
 });
 
-function init() {
+const init = () => {
   buildCss();
   buildHtml();
   fetchData();
-}
+};
 
-function buildCss() {
+const buildCss = () => {
   const style = document.createElement("style");
   style.textContent = `
 
@@ -41,7 +41,7 @@ function buildCss() {
       @media (min-width:1223.1px) and (max-width:1440px) {.user-card { width:27%}}`;
 
   document.head.appendChild(style);
-}
+};
 
 function buildHtml() {
   const overlay = document.createElement("div");
@@ -74,7 +74,8 @@ function showNotification(message, type) {
     }, 500);
   }, 5000);
 }
-function fetchData() {
+
+const fetchData = async () => {
   const storedData = localStorage.getItem("users");
   const expiryTime = localStorage.getItem("expiryTime");
   const now = new Date().getTime();
@@ -82,88 +83,86 @@ function fetchData() {
   if (storedData && expiryTime && now < expiryTime) {
     displayUsers(JSON.parse(storedData));
   } else {
-    fetchUsers()
-      .then((data) => {
-        localStorage.setItem("users", JSON.stringify(data));
-        localStorage.setItem("expiryTime", now + 24 * 60 * 60 * 1000);
-        displayUsers(data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    try {
+      const data = await fetchUsers();
+      localStorage.setItem("users", JSON.stringify(data));
+      localStorage.setItem("expiryTime", now + 24 * 60 * 60 * 1000);
+      displayUsers(data);
+    } catch (error) {
+      console.error(error);
+    }
   }
-}
+};
 
-function fetchUsers() {
-  return new Promise((resolve, reject) => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => {
-        showNotification("Data fetched successfully.", "success");
-        if (!response.ok) {
-          reject(new Error(`API hatası: ${response.status}`));
-          showNotification("Failed to fetch data!", "error");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        if (!Array.isArray(data) || data.length === 0) {
-          reject(new Error("API is empty!."));
-          showNotification("API is empty!", "error");
-        }
-        resolve(data);
-      })
-      .catch((error) =>
-        reject(new Error(`Connection Error: ${error.message}`))
-      );
-  });
-}
-
-function displayUsers(users) {
-  const container = document.querySelector(".ins-api-users");
-  if (!container) {
-    console.error("ins-api-users div bulunamadı!");
-    return;
-  }
-  container.innerHTML = "";
-
-  users.forEach((user) => {
-    const userDiv = document.createElement("div");
-    userDiv.className = "user-card";
-    userDiv.innerHTML = `
-          <img src="https://i.pravatar.cc/150?u=${user.id}" alt="Avatar" class="avatar-img">
-          <h3>${user.username}</h3>
-          <p><span style='font-weight: bold;'>E-mail:</span></br> ${user.email}</p>
-          <p><span style='font-weight: bold;'>Address:</span></br> ${user.address.street}, ${user.address.city}</p>
-          <div class="button-container"><button class="details-btn">Show Details</button>
-          <button class="delete-btn">Delete</button></div>`;
-
-    userDiv
-      .querySelector(".details-btn")
-      .addEventListener("click", function () {
-        showPopup(user);
-      });
-
-    userDiv.querySelector(".delete-btn").addEventListener("click", function () {
-      deleteUser(user.id);
+const fetchUsers = () => {
+  return fetch("https://jsonplaceholder.typicode.com/users")
+    .then((response) => {
+      showNotification("Data fetched successfully.", "success");
+      if (!response.ok) {
+        showNotification("Failed to fetch data!", "error");
+        return Promise.reject(`API Error: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      if (!Array.isArray(data) || data.length === 0) {
+        showNotification("API is empty!", "error");
+        return Promise.reject("API returned empty data.");
+      }
+      return data;
+    })
+    .catch((error) => {
+      console.error(error);
+      return [];
     });
+};
+const displayUsers = (users) => {
+  const container = document.querySelector(".ins-api-users");
+  if (!container) return console.error("ins-api-users div not found!");
 
-    container.appendChild(userDiv);
+  container.innerHTML = users
+    .map(
+      ({ id, username, email, address }) => `
+    <div class="user-card">
+      <img src="https://i.pravatar.cc/150?u=${id}" alt="Avatar" class="avatar-img">
+      <h3>${username}</h3>
+      <p><span style='font-weight: bold;'>E-mail:</span></br> ${email}</p>
+      <p><span style='font-weight: bold;'>Address:</span></br> ${address.street}, ${address.city}</p>
+      <div class="button-container">
+        <button class="details-btn" data-id="${id}">Show Details</button>
+        <button class="delete-btn" data-id="${id}">Delete</button>
+      </div>
+    </div>`
+    )
+    .join("");
+
+  document.querySelectorAll(".details-btn").forEach((btn) => {
+    btn.addEventListener("click", (e) =>
+      showPopup(users.find((user) => user.id == e.target.dataset.id))
+    );
   });
-}
-function deleteUser(userId) {
+
+  document.querySelectorAll(".delete-btn").forEach((btn) => {
+    btn.addEventListener("click", (e) => deleteUser(e.target.dataset.id));
+  });
+};
+
+const deleteUser = (userId) => {
   let users = JSON.parse(localStorage.getItem("users")) || [];
-  users = users.filter((user) => user.id !== userId);
+  users = users.filter((user) => user.id !== parseInt(userId));
   localStorage.setItem("users", JSON.stringify(users));
 
   if (users.length === 0) {
     fetchUsers()
       .then((data) => {
-        localStorage.setItem("users", JSON.stringify(data));
-        localStorage.setItem(
-          "expiryTime",
-          new Date().getTime() + 24 * 60 * 60 * 1000
-        );
-        displayUsers(data);
+        if (data.length > 0) {
+          localStorage.setItem("users", JSON.stringify(data));
+          localStorage.setItem(
+            "expiryTime",
+            new Date().getTime() + 24 * 60 * 60 * 1000
+          );
+          displayUsers(data);
+        }
       })
       .catch((error) => {
         console.error(error);
@@ -172,21 +171,32 @@ function deleteUser(userId) {
   } else {
     displayUsers(users);
   }
-}
+};
 
-function showPopup(user) {
+const showPopup = ({
+  id,
+  username,
+  name,
+  website,
+  email,
+  phone,
+  company,
+  address,
+}) => {
   const popup = document.querySelector(".popup");
   const overlay = document.querySelector(".overlay");
+
   popup.innerHTML = `
-      <img src="https://i.pravatar.cc/150?u=${user.id}" alt="Avatar" class="avatar-img">
-      <h3>${user.username}</h3>
-      <p><strong>Name Surname:</strong> ${user.name}</p>
-      <p><strong>Website:</strong> <a href='http://${user.website}' target='_blank'>${user.website}</a></p>
-      <p><strong>E-mail:</strong> ${user.email}</p>
-      <p><strong>Phone:</strong> ${user.phone}</p>
-      <p><strong>Company:</strong> ${user.company.name}</p>
-      <p><strong>Address:</strong> ${user.address.street}, ${user.address.city}</p>
-      <div class="button-container"><button class="close-btn">Close</button></div>`;
+    <img src="https://i.pravatar.cc/150?u=${id}" alt="Avatar" class="avatar-img">
+    <h3>${username}</h3>
+    <p><strong>Name Surname:</strong> ${name}</p>
+    <p><strong>Website:</strong> <a href='http://${website}' target='_blank'>${website}</a></p>
+    <p><strong>E-mail:</strong> ${email}</p>
+    <p><strong>Phone:</strong> ${phone}</p>
+    <p><strong>Company:</strong> ${company.name}</p>
+    <p><strong>Address:</strong> ${address.street}, ${address.city}</p>
+    <div class="button-container"><button class="close-btn">Close</button></div>`;
+
   popup.style.display = "block";
   overlay.style.display = "block";
 
@@ -194,4 +204,4 @@ function showPopup(user) {
     popup.style.display = "none";
     overlay.style.display = "none";
   });
-}
+};
