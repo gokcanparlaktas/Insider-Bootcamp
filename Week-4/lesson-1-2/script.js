@@ -86,12 +86,10 @@ function fetchData() {
       .then((data) => {
         localStorage.setItem("users", JSON.stringify(data));
         localStorage.setItem("expiryTime", now + 24 * 60 * 60 * 1000);
-        showNotification("Data fetched successfully.", "success");
         displayUsers(data);
       })
       .catch((error) => {
         console.error(error);
-        showNotification("Failed to fetch data!", "error");
       });
   }
 }
@@ -100,6 +98,7 @@ function fetchUsers() {
   return new Promise((resolve, reject) => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => {
+        showNotification("Data fetched successfully.", "success");
         if (!response.ok) {
           reject(new Error(`API hatası: ${response.status}`));
           showNotification("Failed to fetch data!", "error");
@@ -108,7 +107,7 @@ function fetchUsers() {
       })
       .then((data) => {
         if (!Array.isArray(data) || data.length === 0) {
-          reject(new Error("API boş veri döndürdü."));
+          reject(new Error("API is empty!."));
           showNotification("API is empty!", "error");
         }
         resolve(data);
